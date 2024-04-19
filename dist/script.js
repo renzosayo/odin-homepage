@@ -46,24 +46,33 @@ const works = [
 /*
   create a function that creates elements. receives 2 params, tag and css classes to attach
 */
-function buildElement(tag, classes) {
-    const element = document.createElement(tag);
+function addClasses(element, classes) {
     element.className = classes.reduce((total, className) => {
         if (total === "")
             return className;
         return total + " " + className;
     }, "");
+}
+function buildElement(tag, classes) {
+    const element = document.createElement(tag);
+    // element.className = classes.reduce((total, className): string => {
+    //   if (total === "") return className;
+    //   return total + " " + className;
+    // }, "");
+    addClasses(element, classes);
     return element;
 }
 function buildLink(href) {
     const link = document.createElement("a");
     link.setAttribute("href", href);
+    link.setAttribute("target", "_blank");
     return link;
 }
-function buildImg(src, alt) {
+function buildImg(src, alt, classes = []) {
     const image = document.createElement("img");
     image.setAttribute("src", src);
     image.setAttribute("alt", alt);
+    addClasses(image, classes);
     return image;
 }
 function buildText(tag, content) {
@@ -93,6 +102,8 @@ function populateWorks(works) {
         const cardTitle = buildText("h3", title);
         const githubLogo = buildLink(ghLink);
         const demoLogo = buildLink(demoLink);
+        githubLogo.appendChild(buildImg("./images/icons/GitHub_logo.png", "github logo", ["mini-logo"]));
+        demoLogo.appendChild(buildImg("./images/icons/new-tab.png", "new tab logo", ["mini-logo"]));
         appendChildren(cardHeader, [cardTitle, githubLogo, demoLogo]);
         details.appendChild(cardHeader);
         // create p for descriptions

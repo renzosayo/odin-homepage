@@ -13,7 +13,7 @@ body {
 /* GENERICS */
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -39,7 +39,8 @@ a:hover {
   width: min(960px, 100%);
   padding: 6px 50px;
   box-shadow: 0px 10px 20px black;
-  background: linear-gradient(#77b0aa, #55c4b9);
+  background: linear-gradient(#77b0aa, #69ded3);
+  gap: 50px;
 }
 
 .header {
@@ -51,7 +52,8 @@ a:hover {
   margin: 10px 0px;
 }
 
-.header img {
+.header img,
+.contact > img {
   max-height: 400px;
   align-self: center;
   justify-self: end;
@@ -81,8 +83,10 @@ a:hover {
   flex-direction: column;
 }
 
-.work h2 {
-  margin-bottom: 16px;
+.work h2,
+.contact h2 {
+  margin-bottom: 24px;
+  border-bottom: 2px solid black;
 }
 
 .works {
@@ -115,7 +119,7 @@ a:hover {
   opacity: 1;
 }
 
-.work-card img {
+.work-card > a > img {
   max-width: 100%;
   object-fit: contain;
   object-position: center;
@@ -133,4 +137,88 @@ a:hover {
 .work-card h3 {
   font-size: 24px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.work-card .card-details .card-header {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.contact {
+  min-height: 60dvh;
+  display: grid;
+  grid-template: auto 1fr / 2fr 1fr;
+}
+
+.contact h2 {
+  grid-column: 1 / -1;
+}
+
+.contact .contact-panel {
+  grid-row: 2;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  justify-content: center;
+}
+
+.contact .contact-panel p {
+  font-size: 18px;
+}
+
+.contact img {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.contact ul {
+  list-style-type: none;
+}
+
+.contact .contact-details img {
+  height: 24px;
+}
+
+.contact .contact-details li {
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.contact .links {
+  display: flex;
+}
+
+.contact .links a img {
+  max-height: 50px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.mini-logo {
+  max-height: 24px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact .links a img:hover,
+.mini-logo:hover {
+  transform: scale(1.4);
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: min(200px, 1fr);
+  margin-bottom: 30px;
+  max-width: 960px;
+  margin: 24px -50px -6px -50px;
+  min-height: 60px;
+  background-color: #e3fef7;
 }

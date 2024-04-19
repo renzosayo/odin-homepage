@@ -59,13 +59,22 @@ const works: Work[] = [
   create a function that creates elements. receives 2 params, tag and css classes to attach
 */
 
-function buildElement(tag: string, classes: string[]): Element {
-  const element = document.createElement(tag);
-
+function addClasses(element: Element, classes: string[]): void {
   element.className = classes.reduce((total, className): string => {
     if (total === "") return className;
     return total + " " + className;
   }, "");
+}
+
+function buildElement(tag: string, classes: string[]): Element {
+  const element = document.createElement(tag);
+
+  // element.className = classes.reduce((total, className): string => {
+  //   if (total === "") return className;
+  //   return total + " " + className;
+  // }, "");
+
+  addClasses(element, classes);
 
   return element;
 }
@@ -73,13 +82,15 @@ function buildElement(tag: string, classes: string[]): Element {
 function buildLink(href: string): Element {
   const link = document.createElement("a");
   link.setAttribute("href", href);
+  link.setAttribute("target", "_blank");
   return link;
 }
 
-function buildImg(src: string, alt: string): Element {
+function buildImg(src: string, alt: string, classes: string[] = []): Element {
   const image = document.createElement("img");
   image.setAttribute("src", src);
   image.setAttribute("alt", alt);
+  addClasses(image, classes);
   return image;
 }
 
@@ -116,6 +127,14 @@ function populateWorks(works: Work[]): void {
     const cardTitle = buildText("h3", title);
     const githubLogo = buildLink(ghLink);
     const demoLogo = buildLink(demoLink);
+
+    githubLogo.appendChild(
+      buildImg("./images/icons/GitHub_logo.png", "github logo", ["mini-logo"])
+    );
+
+    demoLogo.appendChild(
+      buildImg("./images/icons/new-tab.png", "new tab logo", ["mini-logo"])
+    );
 
     appendChildren(cardHeader, [cardTitle, githubLogo, demoLogo]);
     details.appendChild(cardHeader);
