@@ -212,7 +212,6 @@ a:hover {
 
 .footer {
   display: flex;
-  flex: 1;
   justify-content: center;
   align-items: center;
   height: min(200px, 1fr);
@@ -221,4 +220,21 @@ a:hover {
   margin: 24px -50px -6px -50px;
   min-height: 60px;
   background-color: #e3fef7;
+}
+
+.footer p {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  * {
+    padding: 0px;
+    margin: 0px;
+  }
+  .container {
+    padding: 3px;
+  }
+  .work-card {
+    width: 100%;
+  }
 }
