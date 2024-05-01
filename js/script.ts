@@ -8,6 +8,14 @@ interface Work {
 
 const works: Work[] = [
   {
+    title: "Todo List",
+    demoLink: "https://react-todo-list-puce-rho.vercel.app/",
+    ghLink: "https://github.com/renzosayo/react-todo-list",
+    imgSrc: ["./images/todo-list.png"],
+    description:
+      "A simple web app for your todo list items. Made with React.js with TypeScript",
+  },
+  {
     title: "Battleship",
     demoLink: "https://renzosayo.github.io/odin-battleship/",
     ghLink: "https://github.com/renzosayo/odin-battleship",
@@ -45,13 +53,6 @@ const works: Work[] = [
     imgSrc: ["./images/sketch-1.png", "./images/sketch-2.png"],
     description:
       "An app for doodling, similar to a child's toy. Made with vanilla JS, HTML and CSS",
-  },
-  {
-    title: "Basic CV Creator",
-    demoLink: "https://main--odin-react-cv-app.netlify.app/",
-    ghLink: "https://github.com/renzosayo/odin-react-cv-app",
-    imgSrc: ["./images/cv-1.png", "./images/cv-2.png"],
-    description: "A web app for creating simple CVs. Made with React.js",
   },
 ];
 
