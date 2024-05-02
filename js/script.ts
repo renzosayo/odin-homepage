@@ -27,7 +27,7 @@ const works: Work[] = [
     title: "Shopping Cart",
     demoLink: "https://odin-react-shopping-cart-nu.vercel.app/",
     ghLink: "https://github.com/renzosayo/odin-react-shopping-cart",
-    imgSrc: ["./images/shop-1.png", "./images/shop-2.png"],
+    imgSrc: ["./images/shopping.png", "./images/shop-2.png"],
     description: "A demo shopping app made with React.js",
   },
   {
@@ -44,7 +44,7 @@ const works: Work[] = [
     ghLink: "https://github.com/renzosayo/odin-react-memory-card",
     imgSrc: ["./images/memory-1.png", "./images/memory-2.png"],
     description:
-      "A simple memory game. Select all the cards without repeating to win!. Made with React.js",
+      "A simple memory game. Select all the cards without repeating to win! Images fetched from the Pokemon API. Made with React.js.",
   },
   {
     title: "Etch-a-Sketch",
