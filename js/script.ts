@@ -28,7 +28,8 @@ const works: Work[] = [
     demoLink: "https://odin-react-shopping-cart-nu.vercel.app/",
     ghLink: "https://github.com/renzosayo/odin-react-shopping-cart",
     imgSrc: ["./images/shopping.png", "./images/shop-2.png"],
-    description: "A demo shopping app made with React.js",
+    description:
+      "A demo shopping app made with React.js. Fake shop items fetched from FakeStore API.",
   },
   {
     title: "Calculator",
